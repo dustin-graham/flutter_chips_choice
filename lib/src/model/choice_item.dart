@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+
 import 'choice_style.dart';
 
 /// Choice option
@@ -50,8 +50,7 @@ class C2Choice<T> {
     this.activeStyle,
     this.select,
     this.selected = false,
-  }) : assert(disabled != null),
-    assert(hidden != null);
+  });
 
   @override
   bool operator ==(Object other) =>
@@ -120,7 +119,7 @@ class C2Choice<T> {
 
   /// Creates a copy of this [S2Choice] but with
   /// the given fields replaced with the new values.
-  C2Choice<T> merge(C2Choice<T> other) {
+  C2Choice<T> merge(C2Choice<T>? other) {
     // if null return current object
     if (other == null) return this;
 

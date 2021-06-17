@@ -9,7 +9,7 @@ import 'chip.dart';
 class ChipsChoice<T> extends StatefulWidget {
 
   /// List of choice item
-  final List<C2Choice<T>> choiceItems;
+  final List<C2Choice<T>>? choiceItems;
 
   /// Async loader of choice items
   final C2ChoiceLoader<T>? choiceLoader;
@@ -156,8 +156,6 @@ class ChipsChoice<T> extends StatefulWidget {
       choiceItems != null || choiceLoader != null,
       'One of the parameters must be provided',
     ),
-    assert(onChanged != null),
-    assert(wrapped != null),
     _isMultiChoice = false,
     _value = value,
     _values = null,
@@ -208,11 +206,9 @@ class ChipsChoice<T> extends StatefulWidget {
       choiceItems != null || choiceLoader != null,
       'One of the parameters must be provided',
     ),
-    assert(onChanged != null),
-    assert(wrapped != null),
     _isMultiChoice = true,
     _value = null,
-    _values = value ?? [],
+    _values = value,
     _onChangedSingle = null,
     _onChangedMultiple = onChanged,
     super(key: key);
